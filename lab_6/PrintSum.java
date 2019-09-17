@@ -14,7 +14,7 @@ public class PrintSum {
 				
 				System.out.println();
 				System.out.print("Enter a value from 1 - 100 to find sum of all digits: ");
-				double value = (int)Math.round(sc.nextDouble());
+				int value = sc.nextInt();
 				if (value < 1 || value > 100) {
 					
 					System.out.println();
@@ -33,7 +33,7 @@ public class PrintSum {
 					}
 				
 				System.out.println();
-				System.out.println("You entered: " + (int)value);
+				System.out.println("You entered: " + value);
 				System.out.println("Sum of values: " + sum);
 					
 				}
