@@ -7,9 +7,15 @@ import java.lang.Math;
 public class SecretNumber {
 
 	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
 		
+		game();
+				
+	}
+	
+	static void game() {
+		
+		Scanner sc = new Scanner(System.in);
+
 		try {
 			
 			System.out.println();
@@ -20,9 +26,9 @@ public class SecretNumber {
 					
 					System.out.print("Guess again: ");
 					
-					if (guess < 1 || guess > 10) {
+					if (guess < 1 && guess > 10 && guess != random) {
 						
-						SecretNumber.main(args);	
+						game();	
 					}
 				}
 				
@@ -30,29 +36,30 @@ public class SecretNumber {
 				System.out.println();
 				System.out.print((int)random + " is correct!");
 				System.out.println();
+				playAgain();
 			}
 			
 		} catch (InputMismatchException e) {
 			
-			System.out.println();
-			System.out.println("Not a valid entry!");
-			SecretNumber.main(args);
+			System.out.print("Not a valid entry!");
+			game();
 		}
+	}
+	
+	static void playAgain() {
+		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.println();
 		System.out.print("Enter another number? (Yes/No): ");
-		sc.nextLine();
 		String choice = sc.nextLine().trim().toLowerCase();
 		String yes = "yes";
 		String no = "no";
 		
 			if (choice.equals(yes)) {	
-				SecretNumber.main(args);	
+				game();	
 			} else if (choice.equals(no)) {	
 				System.exit(0);
 			}
-				
-	}
-					
-}
-				
+	}					
+}			
