@@ -1,9 +1,7 @@
 package practice;
-
 import java.util.Scanner;
 import java.util.InputMismatchException;
 import java.lang.Math;
-
 public class SecretNumber {
 
 	public static void main(String[] args) {
