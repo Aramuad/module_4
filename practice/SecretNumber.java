@@ -35,7 +35,6 @@ public class SecretNumber {
 			if (guess == random) {
 				System.out.println();
 				System.out.print((int)random + " is correct!");
-				System.out.println();
 				playAgain();
 			}
 			
