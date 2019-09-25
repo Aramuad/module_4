@@ -4,12 +4,12 @@ import java.util.InputMismatchException;
 public class Collatz {
 
 	public static void main(String[] args) {
-	try {
-		collatzFunction();	
-	} catch (InputMismatchException e) {
-		System.out.print("That's not a number...");
-		Collatz.main(args);	
-	}
+		try {
+			collatzFunction();	
+		} catch (InputMismatchException e) {
+			System.out.print("That's not a number...");
+			Collatz.main(args);	
+		}
 	}
 	static void collatzFunction() {
 		Scanner sc = new Scanner(System.in);
