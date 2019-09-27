@@ -1,14 +1,20 @@
 package practice;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class returnPractice {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		do {
-			collatzFunction();
-		} while (again());
+		try {
+			do {
+				collatzFunction();
+			} while (again());
+		} catch (InputMismatchException e) {
+			System.out.println("Not a valid entry!");
+			main(args);
+		}
 	}
 	static void collatzFunction() {
 		Scanner sc = new Scanner(System.in);
@@ -32,13 +38,17 @@ public class returnPractice {
 	static boolean again() {
 		Scanner sc = new Scanner(System.in);
 		String yes = "yes";
-		boolean ans;
+		String no = "no";
+		boolean ans = true;
 		System.out.print("Enter another number? (Yes/No): ");
 		String answer = sc.nextLine();
 			if (answer.equals(yes)) {
 				ans = true;
-			} else {
+			} else if (answer.equals(no)) {
 				ans = false;
+			} else {
+				System.out.println("Not a valid entry!");
+				again();
 			}
 		return ans;
 	}		
